@@ -4,6 +4,7 @@
     "gulp-clean-css": "^3.9.3",
     "gulp-concat": "latest",
     "gulp-connect": "^5.5.0",
+    "gulp-imagemin": "^4.1.0",
     "gulp-livereload": "^3.8.1",
     "gulp-sass": "latest",
     "gulp-sequence": "^1.0.0",

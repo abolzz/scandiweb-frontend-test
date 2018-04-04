@@ -1,7 +1,8 @@
 // Gulpfile
 var gulp = require('gulp'),
     livereload = require('gulp-livereload'),
-    connect = require('gulp-connect');
+    connect = require('gulp-connect'),
+    imagemin = require('gulp-imagemin');
 
 // Connects to a local webserver
 gulp.task('connect', function() {
@@ -43,12 +44,20 @@ gulp.task('js', function() {
   .pipe(gulp.dest('assets/js'))
 });
 
+// Minifies the images
+gulp.task('images', function() {
+    gulp.src('img/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('assets/img'))
+});
+
 // Watch for file changes
 gulp.task('watch', function() {
   livereload.listen();
+  gulp.watch('img/*', ['images']);
   gulp.watch('js/*.js', ['js']);
   gulp.watch('scss/styles.scss', ['sass']);
-  gulp.watch(['*.html', 'scss/styles.scss', 'js/*.js'], ['html']);
+  gulp.watch(['*.html', 'scss/styles.scss', 'js/*.js', 'img/*'], ['html']);
 });
 
 // Tasks that will happen by default
