@@ -1,5 +1,20 @@
 // Gulpfile
-var gulp = require('gulp');
+var gulp = require('gulp'),
+    livereload = require('gulp-livereload'),
+    connect = require('gulp-connect');
+
+// Connects to a local webserver
+gulp.task('connect', function() {
+  connect.server({
+    livereload: true
+  });
+});
+
+// Reloads the page whenever HTML content has changed
+gulp.task('html', function() {
+  gulp.src('./*.html')
+    .pipe(livereload());
+});
 
 // Compiling scss to css, creating a sourcemap and minifying the output
 var sass = require('gulp-sass'),
@@ -15,7 +30,7 @@ gulp.task('sass', function() {
   .pipe(gulp.dest('assets/css'))
 });
 
-// Minify all JS and create a sourcemap
+// Minify and concatenate all JS and create a sourcemap
 var uglify = require('gulp-uglify'),
     concat = require('gulp-concat');
 
@@ -30,6 +45,11 @@ gulp.task('js', function() {
 
 // Watch for file changes
 gulp.task('watch', function() {
+  livereload.listen();
   gulp.watch('js/*.js', ['js']);
   gulp.watch('scss/styles.scss', ['sass']);
+  gulp.watch(['*.html', 'scss/styles.scss', 'js/*.js'], ['html']);
 });
+
+// Tasks that will happen by default
+gulp.task('default', ['connect', 'watch']);
