@@ -1,13 +1,6 @@
 // Gulpfile
 var gulp = require('gulp');
 
-// Error messages
-var gutil = require('gulp-util');
-
-gulp.task('log', function() {
-  gutil.log('== My Log Task ==')
-});
-
 // Compiling scss to css, creating a sourcemap and minifying the output
 var sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
@@ -16,7 +9,7 @@ var sass = require('gulp-sass'),
 gulp.task('sass', function() {
   gulp.src('scss/*.scss')
   .pipe(sourcemaps.init())
-  .pipe(sass().on('error', gutil.log))
+  .pipe(sass())
   .pipe(cleanCSS())
   .pipe(sourcemaps.write())
   .pipe(gulp.dest('assets/css'))
