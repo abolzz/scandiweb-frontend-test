@@ -1,39 +1,41 @@
 // Gulpfile
 var gulp = require('gulp'),
-    livereload = require('gulp-livereload'),
-    connect = require('gulp-connect'),
+    connect = require('gulp-connect-php7'),
+    browserSync = require('browser-sync'),
     imagemin = require('gulp-imagemin');
 
-// Connects to a local webserver
+// Connects to a local webserver and reloads whenever the content is changed
 gulp.task('connect', function() {
   connect.server({
-    livereload: true
-  });
-});
-
-// Reloads the page whenever HTML content has changed
-gulp.task('html', function() {
-  gulp.src('./*.html')
-    .pipe(livereload());
+    // (need to specify local PHP install location)
+    base: 'assets',
+    bin: 'C:/Xampp/php/php.exe',
+    ini: 'C:/Xampp/php/php.ini'
+  }, function (){
+      browserSync({
+        proxy: '127.0.0.1:8000'
+      });
+    });
 });
 
 // Compiling scss to css, creating a sourcemap and minifying the output
 var sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
-    cleanCSS = require('gulp-clean-css');
+    cleanCSS = require('gulp-clean-css'),
+    concat = require('gulp-concat');
 
 gulp.task('sass', function() {
   gulp.src('scss/*.scss')
   .pipe(sourcemaps.init())
   .pipe(sass())
   .pipe(cleanCSS())
+  .pipe(concat('styles.min.css'))
   .pipe(sourcemaps.write())
   .pipe(gulp.dest('assets/css'))
 });
 
 // Minify and concatenate all JS and create a sourcemap
-var uglify = require('gulp-uglify'),
-    concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
 
 gulp.task('js', function() {
   gulp.src('js/*.js')
@@ -53,11 +55,12 @@ gulp.task('images', function() {
 
 // Watch for file changes
 gulp.task('watch', function() {
-  livereload.listen();
   gulp.watch('img/*', ['images']);
   gulp.watch('js/*.js', ['js']);
-  gulp.watch('scss/styles.scss', ['sass']);
-  gulp.watch(['*.html', 'scss/styles.scss', 'js/*.js', 'img/*'], ['html']);
+  gulp.watch('scss/*.scss', ['sass']);
+  gulp.watch(['assets/*.php', 'assets/includes/*.html', 'assets/css/*.css', 'assets/js/*.js', 'img/*']).on('change', function () {
+    browserSync.reload();
+  });
 });
 
 // Tasks that will happen by default

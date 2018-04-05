@@ -1,0 +1,22 @@
+// Navigation
+.nav {
+	bottom: 0;
+    left: 0;
+    position: fixed;
+	width: 100%;
+	background: #333333;
+	border-top: 1px solid #5f6067;
+}
+.nav--ul {
+	list-style-type: none;
+	display: flex;
+	justify-content: space-between;
+	width: 85%;
+	padding: 2.5% 7.5%;
+}
+.nav--ul-li {
+	opacity: 0.5;
+}
+.active {
+	opacity: 1;
+}
