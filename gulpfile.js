@@ -58,7 +58,7 @@ gulp.task('watch', function() {
   gulp.watch('img/*', ['images']);
   gulp.watch('js/*.js', ['js']);
   gulp.watch('scss/*.scss', ['sass']);
-  gulp.watch(['assets/*.php', 'assets/includes/*.html', 'assets/css/*.css', 'assets/js/*.js', 'img/*']).on('change', function () {
+  gulp.watch(['assets/*.php', 'assets/includes/*.html', 'assets/includes/*.php', 'assets/css/*.css', 'assets/js/*.js', 'img/*']).on('change', function () {
     browserSync.reload();
   });
 });

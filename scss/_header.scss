@@ -1,0 +1,22 @@
+// Header
+.header {
+	display: flex;
+	align-items: center;
+	text-align: center;
+	padding: 7.5% 0 2.5%;
+
+	.button--back {
+		width: 20%;
+	}
+	.header--heading {
+		width: 65%;
+		padding-right: 15%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	h1 {
+		font-size: 21px;
+		padding-right: 7.5%;
+	}
+}
