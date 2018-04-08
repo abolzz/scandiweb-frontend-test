@@ -1,5 +1,3 @@
-.statistics--wrapper {
-}
 .months {
 	display: flex;
 	overflow-x: scroll;
@@ -9,4 +7,11 @@
 .nav--ul-li-months {
 	opacity: 0.5;
 	padding: 20px;
+}
+.chart {
+	width: 70%;
+	padding: 15% 15%;
+}
+.empty {
+	fill: $secondary-dark;
 }

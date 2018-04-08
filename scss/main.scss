@@ -26,6 +26,10 @@ $accent-blue: #0b78e3;
 	overflow-y: hidden;
 }
 
+.d-none {
+	display: none;
+}
+
 @import 'statistics';
 @import 'header';
 @import 'navigation';
