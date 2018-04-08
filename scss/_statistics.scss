@@ -15,3 +15,39 @@
 .empty {
 	fill: $secondary-dark;
 }
+.inner-circle {
+	fill: $main-dark;
+}
+.balance {
+	position: absolute;
+	width: 30%;
+	left: 35%;
+	top: 50%;
+    -webkit-transform: translateX(-35%);
+	transform: translateX(-35%);
+    -webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	color: #ffffff;
+	text-align: center;
+}
+.sum {
+	font-size: 1.8em;
+	padding: 0 0 1.5% 0;
+}
+.sum--coma {
+	font-size: 0.5em;
+	vertical-align: super;
+}
+.sum--label {
+	opacity: 0.5;
+}
+.categorySpent {
+	text-align: center;
+	padding: 12.5% 0 0;
+}
+#categorySpentSum {
+	font-size: 1.35em;
+}
+.categorySpentIcon {
+	padding: 0 1.5% 0 0;
+}

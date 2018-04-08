@@ -14,27 +14,55 @@
 		<li><span class="nav--ul-li-months">December</span></li>
 	</ul>
 
-	<div class="chart">
-<svg viewBox="0 0 42 42" class="donut" transform="rotate(-55)">
-  <circle class="donut-hole" cx="21" cy="21" r="15.91549430918954" fill="transparent"></circle>
-  <circle class="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="transparent" stroke-width="3"></circle>
+<div class="chart">
+	<svg viewBox="0 0 42 42" class="donut" transform="rotate(-70)">
 
-	<linearGradient id="pinks" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="60" y2="10">
-		<stop offset="0%" stop-color="#8d4de8"/>
-		<stop offset="100%" stop-color="#ff2366"/>
-	</linearGradient>
-  <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="url(#pinks)" stroke-width="7" stroke-dasharray="35 65" stroke-dashoffset="25"></circle>
-  	<linearGradient id="blues" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="35" y2="10">
-			<stop offset="0%" stop-color="#6956ec"/>
-			<stop offset="100%" stop-color="#56b2ba"/>
-	</linearGradient>
-  <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="url(#blues)" stroke-width="7" stroke-dasharray="25 75" stroke-dashoffset="90"></circle>
-  	<linearGradient id="orangeYellow" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="30">
-			<stop offset="0%" stop-color="#fd3f2f"/>
-			<stop offset="100%" stop-color="#face15"/>
-	</linearGradient>
-  <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="url(#orangeYellow)" stroke-width="7" stroke-dasharray="25 75" stroke-dashoffset="65"></circle>
-  <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#0e0f1a" stroke-width="7" stroke-dasharray="15 85" stroke-dashoffset="40"></circle>
-</svg>
+		<linearGradient id="pinks" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="60" y2="10">
+			<stop offset="0%" stop-color="#8d4de8"/>
+			<stop offset="100%" stop-color="#ff2366"/>
+		</linearGradient>
+	  <circle cx="21" cy="21" r="16" fill="transparent" stroke="url(#pinks)" stroke-width="10" stroke-dasharray="25 75" stroke-dashoffset="25"></circle>
+	  	<linearGradient id="blues" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="40" y2="0">
+				<stop offset="0%" stop-color="#6956ec"/>
+				<stop offset="100%" stop-color="#56b2ba"/>
+		</linearGradient>
+	  <circle cx="21" cy="21" r="16" fill="transparent" stroke="url(#blues)" stroke-width="6" stroke-dasharray="30 70" stroke-dashoffset="0"></circle>
+	  	<linearGradient id="orangeYellow" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="40">
+				<stop offset="0%" stop-color="#fd3f2f"/>
+				<stop offset="100%" stop-color="#face15"/>
+		</linearGradient>
+	  <circle cx="21" cy="21" r="16" fill="transparent" stroke="url(#orangeYellow)" stroke-width="10" stroke-dasharray="30 70" stroke-dashoffset="70"></circle>
+	  <circle cx="21" cy="21" r="16" fill="transparent" stroke="#0e0f1a" stroke-width="5" stroke-dasharray="15 85" stroke-dashoffset="40"></circle>
+	  <circle class="inner-circle" cx="21" cy="21" r="13" fill="#161823" stroke="transparent" stroke-width="5" stroke-dasharray="100 0" stroke-dashoffset="0"></circle>
+
+	</svg>
+
+	<div class="balance">
+		<div id="balanceSum" class="sum">
+			<span>$420</span>
+			<span class="sum--coma">25</span>
+		</div>
+		<span id="balanceLabel" class="sum--label">balance</span>
 	</div>
+
+	<div class="categorySpent">
+		<div id="categorySpentSum" class="sum">
+			<img src="img/food-icon.png" alt="Food Icon" class="categorySpentIcon">
+			<span>$230</span>
+			<span class="sum--coma">25</span>
+		</div>
+		<span id="categorySpentLabel" class="sum--label">food and restaurants</span>
+	</div>
+</div>
+
+<div class="incomeOutcome">
+	<div class="income">
+		<span id="">
+		</span>
+	</div>
+	<div class="outcome">
+		
+	</div>
+</div>
+
 </section>
