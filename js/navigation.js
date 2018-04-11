@@ -27,6 +27,9 @@ function navigate (array) {
 		    		}
 		    		sections[index].classList.remove('d-none');
 		    		sections[index].classList.add('active');
+		    		setTimeout(function() {
+				        document.getElementById('nav').classList.add('d-none');
+				    }, 1000);
 		    	}
 		    }
 		}
@@ -47,4 +50,6 @@ backButton.onclick = function(event) {
 		navItems[i].classList.remove('active');
 	}
 	navItems[4].classList.add('active');
+
+	document.getElementById('nav').classList.remove('d-none');
 }

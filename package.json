@@ -1,6 +1,10 @@
 {
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
     "gulp": "latest",
+    "gulp-babel": "^7.0.1",
     "gulp-clean-css": "^3.9.3",
     "gulp-concat": "latest",
     "gulp-connect": "^5.5.0",
@@ -11,6 +15,7 @@
     "gulp-sass": "latest",
     "gulp-sequence": "^1.0.0",
     "gulp-uglify": "latest",
+    "gulp-uglify-es": "^1.0.1",
     "gulp-util": "latest"
   },
   "dependencies": {

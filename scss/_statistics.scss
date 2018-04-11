@@ -1,3 +1,4 @@
+// Months select
 .months {
 	display: flex;
 	overflow-x: scroll;
@@ -10,25 +11,42 @@
 }
 .chart {
 	width: 70%;
-	padding: 15% 15%;
+	padding: 11.5% 15%;
+	position: relative;
 }
 .empty {
 	fill: $secondary-dark;
 }
+
+// Chart
 .inner-circle {
 	fill: $main-dark;
+}
+.circle {
+	stroke-opacity: 0.5;
+	stroke-width: 7;
+}
+.active-circle {
+	stroke-opacity: 1;
+	stroke-width: 10;
+	animation: active 0.5s ease;
 }
 .balance {
 	position: absolute;
 	width: 30%;
+	height: 20%;
 	left: 35%;
-	top: 50%;
+	top: 40%;
     -webkit-transform: translateX(-35%);
 	transform: translateX(-35%);
-    -webkit-transform: translateY(-50%);
-	transform: translateY(-50%);
+    -webkit-transform: translateY(-40%);
+	transform: translateY(-40%);
 	color: #ffffff;
 	text-align: center;
+	display: flex;
+	justify-content:center;
+    align-content:center;
+    flex-direction:column;
 }
 .sum {
 	font-size: 1.8em;
@@ -50,4 +68,81 @@
 }
 .categorySpentIcon {
 	padding: 0 1.5% 0 0;
+	width: 16px;
+	height: 18px;
+}
+
+// Inputs
+.incomeOutcome {
+	display: flex;
+	width: 95%;
+	padding: 2.5%;
+	justify-content: center;
+	text-align: center;
+	font-size: 2em;
+}
+.income {
+	width: 40%;
+	padding: 5%;
+	border: 1px solid rgba(11, 120, 227, 0.5);
+	border-radius: 5px;
+	margin-right: 2.5%;
+}
+.outcome {
+	width: 40%;
+	padding: 5%;
+	border: 1px solid rgba(255, 35, 102, 0.5);
+	border-radius: 5px;
+	margin-left: 2.5%;
+}
+.incomeOutcome-coma {
+	position: relative;
+	display: inline-block;
+}
+.incomeOutcome-coma-item {
+	display: table-row;
+}
+
+// Modals
+.modal {
+	position: absolute;
+    z-index: 2;
+    left: 20%;
+	top: 40%;
+    -webkit-transform: translateX(-20%);
+	transform: translateX(-20%);
+    -webkit-transform: translateY(-40%);
+	transform: translateY(-40%);
+	width: 60%;
+	background: $main-dark;
+	border-radius: 5px;
+	font-size: .75em;
+}
+.incomeModal--wrapper {
+	border: 2px solid rgba(11, 120, 227, 0.5);
+}
+.outcomeModal--wrapper {
+	border: 2px solid rgba(255, 35, 102, 0.5);
+}
+.modal--inner {
+	padding: 5%;
+}
+.incomeOutcome--input {
+	background: #ffffff;
+	border: 2px solid rgba(11, 120, 227, 0.5);
+	border-radius: 5px;
+	line-height: 2;
+	color: $secondary-dark;
+	font-size: 1.15em;
+	width: 90%;
+	padding: 0 5%;
+	margin: 5% 0;
+}
+.overlay {
+	position: absolute;
+  	width: 100%;
+  	height: 100%;
+  	background: $main-dark;
+  	opacity: 0.8;
+  	z-index: 1;
 }

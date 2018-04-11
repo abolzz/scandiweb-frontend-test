@@ -1,3 +1,4 @@
+<div id="overlay" class="overlay d-none"></div>
 <section id="statistics--wrapper" class="d-none">
 	<ul class="months">
 		<li><span class="nav--ul-li-months">January</span></li>
@@ -21,47 +22,70 @@
 			<stop offset="0%" stop-color="#8d4de8"/>
 			<stop offset="100%" stop-color="#ff2366"/>
 		</linearGradient>
-	  <circle cx="21" cy="21" r="16" fill="transparent" stroke="url(#pinks)" stroke-width="10" stroke-dasharray="25 75" stroke-dashoffset="25"></circle>
+	  <circle data-value="entertainment" icon-source="img/entertainment-icon.svg" class="circle" cx="21" cy="21" r="16" fill="transparent" stroke="url(#pinks)" stroke-dasharray="25 75" stroke-dashoffset="25"></circle>
 	  	<linearGradient id="blues" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="40" y2="0">
 				<stop offset="0%" stop-color="#6956ec"/>
 				<stop offset="100%" stop-color="#56b2ba"/>
 		</linearGradient>
-	  <circle cx="21" cy="21" r="16" fill="transparent" stroke="url(#blues)" stroke-width="6" stroke-dasharray="30 70" stroke-dashoffset="0"></circle>
+	  <circle data-value="bills" icon-source="img/bills-icon.svg" class="circle" cx="21" cy="21" r="16" fill="transparent" stroke="url(#blues)" stroke-dasharray="30 70" stroke-dashoffset="0"></circle>
 	  	<linearGradient id="orangeYellow" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="40">
 				<stop offset="0%" stop-color="#fd3f2f"/>
 				<stop offset="100%" stop-color="#face15"/>
 		</linearGradient>
-	  <circle cx="21" cy="21" r="16" fill="transparent" stroke="url(#orangeYellow)" stroke-width="10" stroke-dasharray="30 70" stroke-dashoffset="70"></circle>
-	  <circle cx="21" cy="21" r="16" fill="transparent" stroke="#0e0f1a" stroke-width="5" stroke-dasharray="15 85" stroke-dashoffset="40"></circle>
-	  <circle class="inner-circle" cx="21" cy="21" r="13" fill="#161823" stroke="transparent" stroke-width="5" stroke-dasharray="100 0" stroke-dashoffset="0"></circle>
+	  <circle data-value="food and restaurants" icon-source="img/food-icon.svg" class="circle active-circle" cx="21" cy="21" r="16" fill="transparent" stroke="url(#orangeYellow)" stroke-dasharray="30 70" stroke-dashoffset="70"></circle>
+	  <circle data-value="extra money" icon-source="img/wallet-icon.svg" class="circle" cx="21" cy="21" r="16" fill="transparent" stroke="#0e0f1a" stroke-dasharray="15 85" stroke-dashoffset="40"></circle>
+	  <circle class="inner-circle" cx="21" cy="21" r="13" fill="#161823" stroke="transparent" stroke-width="7" stroke-dasharray="100 0" stroke-dashoffset="0"></circle>
 
 	</svg>
 
 	<div class="balance">
 		<div id="balanceSum" class="sum">
-			<span>$420</span>
-			<span class="sum--coma">25</span>
+			<span id="balance">$0</span>
+			<span class="sum--coma">00</span>
 		</div>
 		<span id="balanceLabel" class="sum--label">balance</span>
 	</div>
 
 	<div class="categorySpent">
 		<div id="categorySpentSum" class="sum">
-			<img src="img/food-icon.png" alt="Food Icon" class="categorySpentIcon">
-			<span>$230</span>
-			<span class="sum--coma">25</span>
+			<img id="categorySpentIcon" src="img/food-icon.svg" alt="Food Icon" class="categorySpentIcon">
+			<span>$0</span>
+			<span class="sum--coma">00</span>
 		</div>
 		<span id="categorySpentLabel" class="sum--label">food and restaurants</span>
 	</div>
 </div>
 
 <div class="incomeOutcome">
-	<div class="income">
-		<span id="">
-		</span>
+	<div id="incomeWrapper" class="income">
+		<span id="income">+$0</span>
+		<div class="incomeOutcome-coma">
+			<span id="incomeComa" class="sum--coma incomeOutcome-coma-item">00</span>
+			<img class="incomeOutcome-coma-item" src="img/income-icon.svg" alt="Income Icon">
+		</div>
 	</div>
-	<div class="outcome">
-		
+	<div id="outcomeWrapper" class="outcome">
+		<span id="outcome">-$0</span>
+		<div class="incomeOutcome-coma">
+			<span id="outcomeComa" class="sum--coma incomeOutcome-coma-item">00</span>
+			<img class="incomeOutcome-coma-item" src="img/outcome-icon.svg" alt="Outcome Icon">
+		</div>
+	</div>
+</div>
+
+<div id="incomeModal" class="modal incomeModal--wrapper d-none">
+	<div class="modal--inner">
+		<h1>Insert your income:</h1>
+		<input id="incomeInput" class="incomeOutcome--input" type="number" name="incomeInput">
+		<button id="incomeSubmit" type="submit" class="button"><img src="img/checked.svg" alt="Checked Icon" class="button-icon"><span>Submit</span></button>
+	</div>
+</div>
+
+<div id="outcomeModal" class="modal outcomeModal--wrapper d-none">
+	<div class="modal--inner">
+		<h1>Insert your outcome:</h1>
+		<input id="outcomeInput" class="incomeOutcome--input" type="number" name="incomeInput">
+		<button id="outcomeSubmit" type="submit" class="button"><img src="img/checked.svg" alt="Checked Icon" class="button-icon"><span>Submit</span></button>
 	</div>
 </div>
 
